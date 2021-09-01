@@ -2,7 +2,7 @@
 
 __author__ = """Matthew Andres Moreno"""
 __email__ = 'm.more500@gmail.com'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 from ._except_return_none import _except_return_none
 from .get_env_context import get_env_context
