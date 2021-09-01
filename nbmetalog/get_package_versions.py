@@ -3,10 +3,9 @@ import types
 
 from . import _except_return_none
 
-@_except_return_none
-def get_package_versions():
+def _do_get_package_versions(stack_idx):
 
-    caller_globals = inspect.stack()[1][0].f_globals
+    caller_globals = inspect.stack()[stack_idx][0].f_globals
 
     caller_base_module_names = [
         val.__name__.split('.')[0]
@@ -28,3 +27,14 @@ def get_package_versions():
             res[base_module] = version
 
     return res
+
+
+@_except_return_none
+def get_package_versions():
+
+    stack_len = len(inspect.stack())
+    return {
+        k : v
+        for stack_idx in range(stack_len)
+        for k, v in _do_get_package_versions(stack_idx).items()
+    }
