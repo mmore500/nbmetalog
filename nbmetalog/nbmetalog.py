@@ -66,7 +66,7 @@ def collate_dataframe_summary(df, name=None):
             **{
                 'a' : name
             },
-            **collate_df_summary(df)
+            **collate_dataframe_summary(df)
         }
     else:
         return {
@@ -86,7 +86,7 @@ def collate_dataframe_synopsis(*args):
         **{
             'manifest' : get_dataframe_manifest(args[0]),
         },
-        **collate_df_summary(*args)
+        **collate_dataframe_summary(*args)
     }
 
 
