@@ -31,7 +31,7 @@ def collate_summary_metadata():
 
 def collate_outattr_metadata():
     return {
-        '_' + k : kn.demote(v) if v is not None else None
+        '_' + k : kn.demote(str(v)) if v is not None else None
         for k, v in collate_summary_metadata().items()
     }
 
