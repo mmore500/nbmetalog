@@ -1,5 +1,6 @@
 """Main module."""
 
+import hurry.filesize as hurry
 from keyname import keyname as kn
 import yaml
 
@@ -77,6 +78,7 @@ def collate_df_summary(df, name=None):
             'num rows' : len(df.index),
             'num rows any na' : int(df.isnull().any(axis=1).sum()),
             'num rows all na' : int(df.isnull().all(axis=1).sum()),
+            'size' : hurry.size(df.memory_usage(deep=True).sum()),
         }
 
 def collate_df_synopsis(*args):

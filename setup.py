@@ -11,8 +11,9 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'keyname>=0.4.1',
     'ipynbname>=2021.3.2',
+    'hurry.filesize>=0.9',
+    'keyname>=0.4.1',
 ]
 
 setup_requirements = ['pytest-runner', ]
