@@ -77,12 +77,30 @@ def collate_df_summary(df, name=None):
             'num rows' : len(df.index),
             'num rows any na' : int(df.isnull().any(axis=1).sum()),
             'num rows all na' : int(df.isnull().all(axis=1).sum()),
-            'manifest' : get_dataframe_manifest(df),
         }
 
-def print_df_summary(*args):
+def collate_df_synopsis(*args):
+    return {
+        **{
+            'manifest' : get_dataframe_manifest(df),
+        },
+        **collate_df_summary(*args)
+    }
+
+
+def print_dataframe_manifest(df):
+    print(
+        yaml.dump( get_dataframe_manifest( df ) )
+    )
+
+def print_dataframe_summary(*args):
     print(
         yaml.dump( collate_df_summary( *args ) )
+    )
+
+def print_dataframe_synopsis(*args):
+    print(
+        yaml.dump( collate_df_synopsis( *args ) )
     )
 
 def nvp_expr(varname):
