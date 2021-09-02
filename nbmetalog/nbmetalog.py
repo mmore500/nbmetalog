@@ -60,7 +60,7 @@ def print_metadata():
     for k, v in get_package_versions().items():
         print(f'{k}=={v}')
 
-def collate_df_summary(df, name=None):
+def collate_dataframe_summary(df, name=None):
     if name is not None:
         return {
             **{
@@ -81,7 +81,7 @@ def collate_df_summary(df, name=None):
             'size' : hurry.size(df.memory_usage(deep=True).sum()),
         }
 
-def collate_df_synopsis(*args):
+def collate_dataframe_synopsis(*args):
     return {
         **{
             'manifest' : get_dataframe_manifest(df),
@@ -97,12 +97,12 @@ def print_dataframe_manifest(df):
 
 def print_dataframe_summary(*args):
     print(
-        yaml.dump( collate_df_summary( *args ) )
+        yaml.dump( collate_dataframe_summary( *args ) )
     )
 
 def print_dataframe_synopsis(*args):
     print(
-        yaml.dump( collate_df_synopsis( *args ) )
+        yaml.dump( collate_dataframe_synopsis( *args ) )
     )
 
 def nvp_expr(varname):
