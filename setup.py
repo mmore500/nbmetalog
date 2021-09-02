@@ -14,6 +14,7 @@ requirements = [
     'ipynbname>=2021.3.2',
     'hurry.filesize>=0.9',
     'keyname>=0.4.1',
+    'pandas>=1.1.2',
 ]
 
 setup_requirements = ['pytest-runner', ]
