@@ -84,7 +84,7 @@ def collate_dataframe_summary(df, name=None):
 def collate_dataframe_synopsis(*args):
     return {
         **{
-            'manifest' : get_dataframe_manifest(df),
+            'manifest' : get_dataframe_manifest(args[0]),
         },
         **collate_df_summary(*args)
     }
