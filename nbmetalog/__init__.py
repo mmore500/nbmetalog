@@ -2,7 +2,7 @@
 
 __author__ = """Matthew Andres Moreno"""
 __email__ = 'm.more500@gmail.com'
-__version__ = '0.2.4'
+__version__ = '0.2.5'
 
 from ._except_return_none import _except_return_none
 from .get_dataframe_full_digest import get_dataframe_full_digest
