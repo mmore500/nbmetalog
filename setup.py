@@ -15,6 +15,7 @@ requirements = [
     'hurry.filesize>=0.9',
     'keyname>=0.4.1',
     'pandas>=1.1.2',
+    'pyyaml>=5.3.1',
 ]
 
 setup_requirements = ['pytest-runner', ]
